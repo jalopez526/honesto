@@ -23,3 +23,11 @@
 .user:last-child {
   border-bottom: none;
 }
+
+.subtitle {
+  color: var(--grey);
+  font-size: 0.75rem;
+  line-height: var(--lineHeight);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}

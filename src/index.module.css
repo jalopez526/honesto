@@ -1,8 +1,13 @@
 :root {
   --lightGrey: #F2F3F4;
+  --middleGrey: #D9DCDE;
+  --darkPurple: #7F0FD7;
+  --darkGrey: #59636E;
   /* COLORS */
+  --grey: #ACB1B6;
   --white: #FFFFFF;
   --black: #000000;
+  --blackPearl: #031323;
   --accentColor: #201d29;
   --borderColor: #D6D6D6;
   --copyColor: #333333;
@@ -89,4 +94,12 @@ a {
   color: var(--primaryColor);
   cursor: pointer;
   font-weight: var(--fw-semibold);
+}
+textarea {
+  border: 1px solid var(--middleGrey);
+  border-radius: var(--borderRadius);
+  resize: none;
+  width: 100%;
+  padding: 1em;
+  background: var(--white);
 }
