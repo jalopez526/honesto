@@ -31,6 +31,20 @@ const Question = ({
   const [isDisabled, setIsDisable] = useState(true)
   const history = useHistory()
 
+  const goForward = () => {
+    if (currentStep === totalSteps) {
+      history.push({
+        pathname: '/share-feedback',
+        state: {
+          feedbackCompleted: true,
+        },
+      })
+      return
+    }
+
+    nextStep()
+  }
+
   return (
     <section key={question.id} className={styles.wizard}>
       <div className={styles.header}>
@@ -58,32 +72,8 @@ const Question = ({
               isDisabled={isDisabled}
               isRequired={question.required}
               onBack={() => previousStep()}
-              onForward={() => {
-                if (currentStep === totalSteps) {
-                  history.push({
-                    pathname: '/share-feedback',
-                    state: {
-                      feedbackCompleted: true,
-                    },
-                  })
-                  return
-                }
-
-                nextStep()
-              }}
-              onSkip={() => {
-                if (currentStep === totalSteps) {
-                  history.push({
-                    pathname: '/share-feedback',
-                    state: {
-                      feedbackCompleted: true,
-                    },
-                  })
-
-                  return
-                }
-                nextStep()
-              }}
+              onForward={goForward}
+              onSkip={goForward}
             />
           </Space>
           <Space marginTop="2em">
