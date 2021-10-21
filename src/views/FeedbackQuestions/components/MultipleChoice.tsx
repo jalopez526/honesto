@@ -15,7 +15,7 @@ const MultipleChoice = ({ options, setIsDisable, store }: Props) => {
   const [selected, setSelected] = useState<number>(0)
   useEffect(() => {
     setIsDisable(selected <= 0)
-  }, [selected])
+  }, [selected, setIsDisable])
 
   const save = (value: number) => {
     setSelected(value)

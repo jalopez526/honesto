@@ -11,7 +11,7 @@ const Textarea = ({ setIsDisable, store }: Props) => {
 
   useEffect(() => {
     setIsDisable(!value)
-  }, [value])
+  }, [value, setIsDisable])
 
   const save = (value: string) => {
     setValue(value)

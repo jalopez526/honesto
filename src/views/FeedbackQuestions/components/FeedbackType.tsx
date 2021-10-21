@@ -33,17 +33,17 @@ const FeedbackType = ({ question, setIsDisable, feedbackUser }: Props) => {
 
   /**
    * Basically this function focuses on storing the answers per user in a single Array position.
-   * Doing
    * @param {string | number} p - The payload (answer) of the question
    * @param {Function} cb - callback in case of needing to inject some extra funcionality
    */
   const storeFeedback = (p: string | number, cb?: Function) => {
     if (cb) cb()
 
+    // Getting the user.id of the feedback user
     const payload = [...feedbacksContext]
     let currentFeedback = payload.findIndex(
       (fe) => fe.userTo === feedbackUser.id,
-    ) // Getting the user.id of the feedback user
+    )
 
     // We get all the previous answer of the feedback user if exists.
     // Update the existing one in case we have decided to change the answer of a previous question

@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Button from '../Button'
-import { FeedbacksContext } from '../../context/FeedbackProvider'
 import styles from './actions.module.css'
 
 interface Props {
@@ -17,7 +16,6 @@ const Actions = ({
   isDisabled,
   isRequired,
 }: Props) => {
-  const feedbacks = useContext(FeedbacksContext)
   return (
     <div className={styles.buttons}>
       <Button secondary onClick={onBack}>

@@ -9,16 +9,6 @@ export interface FeedbacksT {
         answer: string | number
       }
     | string
-  // feedbacks: {
-  //   period: {
-  //     userTo: string;
-  //     userFrom: string;
-  //     questions : {
-  //       id: string;
-  //       answer: string;
-  //     }
-  //   }
-  // }
 }
 
 type DispatchFeedbacksContext = any
