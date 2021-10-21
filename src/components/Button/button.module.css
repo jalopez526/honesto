@@ -26,3 +26,33 @@
 .secondaryButton:hover {
   background-color: var(--primaryLightColor);
 }
+
+.purpleButton {
+  background-color: var(--darkPurple);
+  color: var(--copyLightColor);
+}
+.purpleButton:hover {
+  background-color: var(--darkPurple);
+  color: var(--copyLightColor);
+}
+
+.disabled {
+  background-color: var(--grey);
+  border-color: var(--grey);
+  color: var(--copyLightColor);
+  pointer-events: none;
+}
+
+.back {
+  font-size: 0.75rem;
+  line-height: var(--lineHeight);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.back:hover {
+  cursor: pointer;
+}
+
+.back span {
+  margin-left: 9px;
+}
