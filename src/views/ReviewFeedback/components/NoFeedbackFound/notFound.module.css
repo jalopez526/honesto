@@ -1,0 +1,18 @@
+.notFound {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  min-height: 175px;
+  background: var(--white);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.notFound .texts {
+  padding: 3em 2em 2em 2em;
+}
+
+.notFound span {
+  color: var(--darkGrey);
+  font-size: 1em;
+  line-height: 19px
+}
