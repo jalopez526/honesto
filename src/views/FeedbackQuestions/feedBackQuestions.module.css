@@ -47,7 +47,7 @@
 
 .multipleOptions p {
   user-select: none; 
-  font-size: 1em;
+  font-size: var(--fs-base);
   color: var(--blackPearl)
 }
 
@@ -67,7 +67,7 @@
 }
 
 .questionsCompleted span {
-  font-size: 1em;
+  font-size: var(--fs-base);
   color: var(--blackPearl);
 }
 

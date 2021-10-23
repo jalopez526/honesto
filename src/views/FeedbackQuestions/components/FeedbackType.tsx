@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AccountContext } from '../../../context/AccountProvider'
 import {
   DispatchFeedbackContext,
@@ -7,6 +7,7 @@ import {
 import { QuestionT } from '../../../context/QuestionProvider'
 import { UserT } from '../../../context/types'
 import MultipleChoice from './MultipleChoice'
+import { Option } from './MultipleChoice'
 import Scale from './Scale'
 import Textarea from './Textarea'
 
@@ -26,17 +27,21 @@ const FeedbackType = ({ question, setIsDisable, feedbackUser }: Props) => {
   const feedbackDispatch = useContext(DispatchFeedbackContext)
   const feedbacksContext = useContext(FeedbacksContext)
   const currentUser = useContext(AccountContext)
+  const [option, setOption] = useState<Option>({ label: '', value: 0 })
+  const [scale, setScale] = useState<number>(-1)
+  const [value, setValue] = useState<string>('')
 
   if (!feedbackUser || !feedbacksContext || !currentUser) return <></>
 
   const { type, options, label } = question
 
   /**
-   * Basically this function focuses on storing the answers per user in a single Array position.
+   * Basically this function focuses on storing the answers for the feedbacks per user in a single Array position.
    * @param {string | number} p - The payload (answer) of the question
    * @param {Function} cb - callback in case of needing to inject some extra funcionality
    */
-  const storeFeedback = (p: string | number, cb?: Function) => {
+
+  const store = (p: string | number, cb?: Function) => {
     if (cb) cb()
 
     // Getting the user.id of the feedback user
@@ -79,19 +84,36 @@ const FeedbackType = ({ question, setIsDisable, feedbackUser }: Props) => {
       {type === Feedback.MULTIPLE_CHOICE && options && (
         <MultipleChoice
           options={options}
-          store={storeFeedback}
-          setIsDisable={setIsDisable}
+          option={option}
+          onOptionSelected={(option: Option) => {
+            const isValidSelection = Boolean(option.label)
+            setIsDisable(!isValidSelection)
+            setOption(option)
+            store(option.label)
+          }}
         />
       )}
       {type === Feedback.SCALE && label && (
         <Scale
-          store={storeFeedback}
-          setIsDisable={setIsDisable}
           label={label}
+          scale={scale}
+          onScaleSelected={(s: number) => {
+            const isValidSelection = Boolean(s)
+            setIsDisable(!isValidSelection)
+            setScale(s)
+            store(s)
+          }}
         />
       )}
       {type === Feedback.TEXT && (
-        <Textarea store={storeFeedback} setIsDisable={setIsDisable} />
+        <Textarea
+          value={value}
+          onChange={(value) => {
+            setValue(value)
+            setIsDisable(!value)
+            store(value)
+          }}
+        />
       )}
     </>
   )

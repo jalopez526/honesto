@@ -6,7 +6,7 @@ interface Props {
   total: number
 }
 
-const QuestionsCompleted = ({ current, total, ...rest }: Props) => {
+const QuestionsCompleted = ({ current, total }: Props) => {
   return (
     <Space marginTop="1em" marginBottom="1em">
       <div className={styles.questionsCompleted}>
