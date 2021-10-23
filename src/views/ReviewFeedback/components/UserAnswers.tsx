@@ -5,11 +5,8 @@ import Scale from './Scale'
 import Skipped from './Skipped'
 import { QuestionT } from '../../../context/QuestionProvider'
 
-interface Props {
-  question: QuestionT
-  questionsAnswers: QuestionAnswer[]
-}
-const Text = ({ value }: any) => <>{value}</>
+const Text = ({ value }: any) => <div className={styles.preview}>{value}</div>
+
 const Container = ({ children, feedbackType }: any) => {
   const FEEDBACKS = ['text', 'multipleChoice']
   return (
@@ -43,6 +40,11 @@ const Answer = ({ feedbackType, answer, Component }: any) => {
       )}
     </div>
   )
+}
+
+interface Props {
+  question: QuestionT
+  questionsAnswers: QuestionAnswer[]
 }
 
 const UserAnswers = ({ question, questionsAnswers }: Props) => {
