@@ -7,7 +7,7 @@ describe('Textarea component', () => {
     jest.clearAllMocks()
   })
 
-  test('should display Scale component', async () => {
+  test('should display Textarea component', async () => {
     const onChange = jest.fn()
     const { getByTestId } = render(<Textarea onChange={onChange} value="" />)
 

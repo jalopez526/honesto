@@ -1,4 +1,3 @@
-import * as React from 'react'
 import styles from './user.module.css'
 
 type Props = {
@@ -17,11 +16,20 @@ const User = (props: Props) => {
   }
 
   return (
-    <div className={styles.user}>
+    <div className={styles.user} data-testid="user">
       {avatarUrl ? (
-        <img className={styles.avatar} alt={name} src={avatarUrl} />
+        <img
+          data-testid="user-avatar"
+          className={styles.avatar}
+          alt={name}
+          src={avatarUrl}
+        />
       ) : (
-        initials && <span className={styles.initials}>{initials}</span>
+        initials && (
+          <span data-testid="user-initials" className={styles.initials}>
+            {initials}
+          </span>
+        )
       )}
       {name ? name : ''}
     </div>
