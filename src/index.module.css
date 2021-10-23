@@ -1,9 +1,15 @@
 :root {
+  /* COLORS */
   --lightGrey: #F2F3F4;
   --middleGrey: #D9DCDE;
   --darkPurple: #7F0FD7;
   --darkGrey: #59636E;
-  /* COLORS */
+  --rosePurple: #FBF7FE;
+  --green: #2BBF6A;
+  --red: #DE521D;
+  --orange: #FF8C21;
+  --lightGreen: #91D958;
+  --yellow: #F5DD07;
   --grey: #ACB1B6;
   --white: #FFFFFF;
   --black: #000000;

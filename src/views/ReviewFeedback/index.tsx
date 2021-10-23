@@ -1,29 +1,47 @@
 import * as React from 'react'
+import Feedbacks from './components/Feedbacks/Feedbacks'
+import { AccountContext } from '../../context/AccountProvider'
+import { FeedbacksContext, FeedbacksT } from '../../context/FeedbackProvider'
 import MainLayout from '../../layouts/MainLayout'
-import styles from './reviewFeedback.module.css'
+import NoFeedbackFound from './components/NoFeedbackFound'
 
-const ReviewFeedback = () => {
+interface Props {
+  feedbackFor: 'me' | 'team'
+}
+const ReviewFeedback = ({ feedbackFor }: Props) => {
+  const feedbackContext = React.useContext(FeedbacksContext)
+  const currentUser = React.useContext(AccountContext)
+
+  let feedbacks: FeedbacksT[] = []
+  let title = ''
+  let subtitle = ''
+
+  console.log(feedbackContext)
+  if (!feedbackContext) return <></>
+
+  //@ts-ignore
+  if (feedbackFor === 'me') {
+    feedbacks = feedbackContext.filter((e) => e.userTo === currentUser?.id)
+    title = 'My feedback'
+    subtitle = 'Feedback received'
+  } else if (feedbackFor === 'team') {
+    feedbacks = feedbackContext.filter((e) => e.userFrom === currentUser?.id)
+    title = 'Team feedback'
+    subtitle = 'Feedback given'
+  }
+
   return (
     <MainLayout loggedIn>
-      <h1>Review Feedback Given</h1>
-
-      <div className={styles.feedbackContainer}>
-        <ul className={styles.users}>
-          <li>
-            <h3>Feedback given</h3>
-          </li>
-          <li>Some person</li>
-          <li>Some other person</li>
-        </ul>
-
-        <ul className={styles.feedback}>
-          <li>
-            <h2>Feedback</h2>
-          </li>
-          <li>some feedback</li>
-          <li>some more feedback</li>
-        </ul>
-      </div>
+      {feedbacks.length > 0 ? (
+        <Feedbacks
+          feedbackFor={feedbackFor}
+          feedbacks={feedbacks}
+          title={title}
+          subtitle={subtitle}
+        />
+      ) : (
+        <NoFeedbackFound />
+      )}
     </MainLayout>
   )
 }

@@ -44,7 +44,10 @@ const App = () => {
             <Home />
           </Route>
           <PrivateRoute isLoggedIn={isLoggedIn} exact path="/my-feedback">
-            <ReviewFeedback />
+            <ReviewFeedback feedbackFor="me" />
+          </PrivateRoute>
+          <PrivateRoute isLoggedIn={isLoggedIn} exact path="/team-feedback">
+            <ReviewFeedback feedbackFor="team" />
           </PrivateRoute>
           <PrivateRoute isLoggedIn={isLoggedIn} exact path="/share-feedback">
             <GiveFeedback />

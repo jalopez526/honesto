@@ -17,9 +17,9 @@ const MultipleChoice = ({ options, setIsDisable, store }: Props) => {
     setIsDisable(selected <= 0)
   }, [selected, setIsDisable])
 
-  const save = (value: number) => {
+  const save = (value: number, label: string) => {
     setSelected(value)
-    store(value)
+    store(label)
   }
 
   return (
@@ -27,7 +27,7 @@ const MultipleChoice = ({ options, setIsDisable, store }: Props) => {
       {options?.map((option) => (
         <div
           key={option.value}
-          onClick={() => save(option.value)}
+          onClick={() => save(option.value, option.label)}
           className={classNames(styles.multipleOptions, {
             [styles.multipleOptionSelected]: selected === option.value,
           })}

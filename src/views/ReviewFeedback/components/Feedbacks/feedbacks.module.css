@@ -1,0 +1,148 @@
+p {
+  font-size: var(--fs-base);
+  line-height: var(--lineHeight);
+  color: var(--blackPearl);
+  font-weight: 300;
+}
+.feedbackContainer {
+  border: var(--baseBorder);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-height: 800px;
+  width: 70%;
+  margin: 0 auto;
+}
+.title {
+  width: 70%;
+  margin: 0 auto;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-l);
+  gap: var(--baseHorzSpacing);
+}
+.row {
+  display: flex;
+  align-items: center;
+  font-size: var(--fs-l);
+  gap: var(--baseHorzSpacing);
+}
+
+.row > * {
+  flex: 1 1 50%;
+}
+
+.users,
+.feedback {
+  list-style-type: none;
+}
+
+.users {
+  border-right: var(--baseBorder);
+}
+
+.users li {
+  padding: 1rem;
+}
+.users h3, .skipped h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: var(--lineHeight);
+  letter-spacing: 0.13em;
+  color: var(--darkGrey);
+}
+.users h3,
+.feedback h2 {
+  margin: 0;
+}
+
+.feedback li {
+  padding: 1.5rem;
+}
+
+.users li,
+.feedback li {
+  border-bottom: var(--baseBorder);
+}
+
+.feedback li:last-child {
+  border-bottom: none;
+}
+
+.userSelected {
+  background: var(--lightGrey);
+}
+
+.userHovered {
+  background: var(--rosePurple);
+  cursor: pointer;
+}
+
+.userDefault {
+  background: var(--white);
+}
+
+.scale .container {
+  display: flex;
+  flex-direction: row;
+}
+
+.scale .container div {
+  width:40px;
+  height:40px;
+  border: 1px solid var(--white);
+  cursor: pointer;
+}
+
+.scaleGray {
+  background-color: var(--lightGrey);
+}
+
+.scaleGreen {
+  background-color: var(--green);
+}
+
+.scaleLightGreen {
+  background-color: var(--lightGreen);
+}
+
+.scaleOrange {
+  background-color: var(--orange);
+}
+
+.scaleYellow {
+  background-color: var(--yellow);  
+}
+
+.scaleRed {
+  background-color: var(--red);  
+}
+.skipped {
+  color: var(--grey);
+}
+.skipped .questionLabel {
+  padding-bottom: 3px;
+}
+.skipped .skippedLabel {
+  width: 100px;
+  background: var(--grey);
+  border-radius: var(--borderRadius);
+}
+.skipped .skippedLabel h3 {  
+  padding: 5px 8px 5px 8px;
+  align-items: center;
+  display: flex;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);  
+  color: var(--white);
+}
+.emptyAnswer {
+  width: 100%;
+  min-height: 40px;
+  background: var(--lightGrey);
+}
+.tooltip {
+  background: var(--darkGrey) !important;
+  border-radius: var(--borderRadius) !important;
+}

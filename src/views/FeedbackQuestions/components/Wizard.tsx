@@ -12,7 +12,6 @@ interface Props {
 const Wizard = ({ questions, feedbackUser }: Props) => {
   const [wizard, setWizard] = useState<any>({})
 
-  // make typescript happy
   if (!questions || !feedbackUser || !wizard) return <></>
   return (
     <StepWizard instance={setWizard}>
