@@ -9,12 +9,13 @@ p {
   display: grid;
   grid-template-columns: 1fr 2fr;
   min-height: 800px;
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 }
 .title {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
+  font-weight: var(--fw-semibold);
 }
 .column {
   display: flex;
@@ -55,6 +56,7 @@ p {
 .users h3,
 .feedback h2 {
   margin: 0;
+  font-weight: var(--fw-semibold);
 }
 
 .feedback li {
@@ -130,11 +132,10 @@ p {
   border-radius: var(--borderRadius);
 }
 .skipped .skippedLabel h3 {  
-  padding: 5px 8px 5px 8px;
   align-items: center;
   display: flex;
+  padding: 5px 8px 5px 8px;
   font-size: var(--fs-base);
-  font-weight: var(--fw-semibold);  
   color: var(--white);
 }
 .emptyAnswer {
@@ -145,4 +146,7 @@ p {
 .tooltip {
   background: var(--darkGrey) !important;
   border-radius: var(--borderRadius) !important;
+}
+.preview {
+  white-space: pre;
 }
