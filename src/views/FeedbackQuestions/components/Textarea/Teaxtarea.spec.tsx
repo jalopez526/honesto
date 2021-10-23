@@ -9,10 +9,11 @@ describe('Textarea component', () => {
 
   test('should display Scale component', async () => {
     const onChange = jest.fn()
-    const { getByTestId } = render(
-      <Textarea onChange={onChange} value='' />)
-      
-      fireEvent.change(getByTestId('textarea'), { target: { value: "I'm just typing something here"}})
+    const { getByTestId } = render(<Textarea onChange={onChange} value="" />)
+
+    fireEvent.change(getByTestId('textarea'), {
+      target: { value: "I'm just typing something here" },
+    })
     expect(onChange).toHaveBeenCalledWith("I'm just typing something here")
   })
 })

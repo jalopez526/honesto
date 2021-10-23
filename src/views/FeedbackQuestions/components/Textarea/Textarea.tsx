@@ -1,4 +1,4 @@
-import styles from '../feedBackQuestions.module.css'
+import styles from '../../feedBackQuestions.module.css'
 
 export interface TextareaProps {
   onChange: (str: string) => void
@@ -8,7 +8,7 @@ export interface TextareaProps {
 const Textarea = ({ value, onChange }: TextareaProps) => {
   return (
     <textarea
-      data-testid='textarea'
+      data-testid="textarea"
       value={value}
       onChange={(e) => onChange(e.target.value)}
       className={styles.textarea}

@@ -127,7 +127,7 @@ p {
   padding-bottom: 3px;
 }
 .skipped .skippedLabel {
-  width: 100px;
+  width: 85px;
   background: var(--grey);
   border-radius: var(--borderRadius);
 }
@@ -135,7 +135,7 @@ p {
   align-items: center;
   display: flex;
   padding: 5px 8px 5px 8px;
-  font-size: var(--fs-base);
+  font-size: 0.8rem;
   color: var(--white);
 }
 .emptyAnswer {
