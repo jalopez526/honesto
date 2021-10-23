@@ -19,7 +19,6 @@ const ReviewFeedback = ({ feedbackFor }: Props) => {
   console.log(feedbackContext)
   if (!feedbackContext) return <></>
 
-  //@ts-ignore
   if (feedbackFor === 'me') {
     feedbacks = feedbackContext.filter((e) => e.userTo === currentUser?.id)
     title = 'My feedback'
