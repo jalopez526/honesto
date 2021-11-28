@@ -1,4 +1,4 @@
-# Honesto - Frontend Practical Exercise
+# Honesto - Feedback app
 
 Honesto is an application allowing peers to leave feedback for other team members.  For this exercise, you are to 
 implement the required tasks below, along with any bonus tasks you also have time to complete.
@@ -32,7 +32,7 @@ Besides giving feedback, a user can also see feedback received from their team (
 - Display the feedback received by the current user from other team members.
 - Include the case of when no feedback has been received.
 
-## Bonus Tasks (optional)
+## Extra tasks
 
 Feel free to also implement any the following task if you are just getting warmed up:
 
